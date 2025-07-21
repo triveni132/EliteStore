@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EliteStore - E-Commerce</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo" onclick="showPage('home')">EliteStore</a>
+                <div class="nav-buttons">
+                    <button class="btn btn-secondary" onclick="showPage('home')">Home</button>
+                    <button class="btn btn-secondary" onclick="showPage('products')">Products</button>
+                    <button class="btn btn-secondary" onclick="showPage('orders')" id="ordersBtn" style="display: none;">Orders</button>
+                    <button class="btn btn-secondary" onclick="showCart()">
+                        <div class="cart-icon">
+                            🛒
+                            <span class="cart-count" id="cartCount">0</span>
+                        </div>
+                    </button>
+                    <button class="btn btn-primary" onclick="showAuth()" id="authBtn">Login</button>
+                    <button class="btn btn-secondary" onclick="logout()" id="logoutBtn" style="display: none;">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            <!-- Home Page -->
+            <div id="home" class="page active">
+                <div class="hero">
+                    <h1>Welcome to EliteStore</h1>
+                    <p>Discover amazing products with the best shopping experience</p>
+                </div>
+                <div class="products-grid" id="featuredProducts"></div>
+            </div>
+
+            <!-- Products Page -->
+            <div id="products" class="page">
+                <h2 class="section-title">All Products</h2>
+                <div class="products-grid" id="allProducts"></div>
+            </div>
+
+            <!-- Orders Page -->
+            <div id="orders" class="page">
+                <h2 class="section-title">Order History</h2>
+                <div id="orderHistory"></div>
+            </div>
+
+            <!-- Cart Page -->
+            <div id="cart" class="page">
+                <h2 class="section-title">Shopping Cart</h2>
+                <div id="cartItems"></div>
+                <div class="cart-total" id="cartTotal" style="display: none;">
+                    <h3>Total: $<span id="totalAmount">0.00</span></h3>
+                    <button class="btn btn-primary" onclick="checkout()" style="margin-top: 1rem;">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('authModal')">&times;</span>
+            <h2 style="color: white; margin-bottom: 1rem; text-align: center;" id="authTitle">Login</h2>
+            <form id="authForm">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group" id="nameGroup" style="display: none;">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;" id="authSubmit">Login</button>
+            </form>
+            <p style="text-align: center; margin-top: 1rem; color: white;">
+                <span id="authToggleText">Don't have an account?</span>
+                <a href="#" onclick="toggleAuth()" style="color: #4ecdc4; text-decoration: none;">
+                    <span id="authToggleLink">Sign Up</span>
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Product Details Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('productModal')">&times;</span>
+            <div id="productDetails"></div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
