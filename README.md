@@ -1,10 +1,10 @@
-# 🛍️ EliteStore – Simple E-commerce Store
+# 🛍️ EliteStore – Smart Shopping Experience
 
 
 ## 📌 Project Overview
 **EliteStore** is a beginner-friendly, full-featured e-commerce web application that delivers a smooth and modern online shopping experience. Built with **HTML, CSS, and JavaScript**, this project replicates core features of a real-world shopping platform and serves as an ideal template for learning, personal projects, and full-stack development practice.
 
-🔗 **Live Demo**: [https://code-alpha-elite-store.vercel.app/](https://code-alpha-elite-store.vercel.app/)
+🔗 **Live Demo**: (https://elitestore-five.vercel.app/)
 
 ---
 
